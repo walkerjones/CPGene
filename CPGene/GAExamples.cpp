@@ -183,6 +183,10 @@ void GAString::printResult(std::ofstream &txtout)
 int main()
 {
 	std::ifstream txtin("input.txt");
+	if (txtin.fail()) {
+		std::cout << "Brak pliku input.txt" << std::endl;
+		return 0;
+	}
 	std::ofstream txtout("output.txt");
 	std::string line;
 	std::vector<double> kweight, kvalue;

@@ -117,9 +117,7 @@ int GA::evolve()
 {
 	int iGen;
 	int iPrelimChrom, iPrelimChromToUsePerRun;
-	auto start = std::chrono::system_clock::now();
-	std::time_t start_time = std::chrono::system_clock::to_time_t(start);
-	//std::cout << "CPGene start: " << std::ctime(&start_time) << std::endl;
+	std::cout << "CPGene start" << std::endl;
 
 	if (numPrelimRuns > 0)
 	{
@@ -191,10 +189,7 @@ int GA::evolve()
 	std::cout << "Najlepszy chromosom: ";
 	std::cout << this->chromosomes[this->bestFitnessChromIndex]->getGenesAsStr() << " Fitness = " << std::fixed << std::setprecision(8) << this->chromosomes[this->bestFitnessChromIndex]->fitness << std::endl;
 	
-	auto end = std::chrono::system_clock::now();
-	std::time_t end_time = std::chrono::system_clock::to_time_t(end);
-
-	//std::cout << "CPGene stop: " << std::ctime(&end_time) << std::endl; 
+	std::cout << "CPGene stop: " << std::endl; 
 	return (iGen);
 }
 

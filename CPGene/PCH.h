@@ -14,9 +14,4 @@
 #include "GA.h"
 #include "Chromosome.h"
 #include <random>
-#include <chrono>
-#include <time.h>
-#include <ctime> 
 #include "stringbuilder.h"
-
-#define _CRT_SECURE_NO_WARNINGS

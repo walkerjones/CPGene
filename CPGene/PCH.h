@@ -6,12 +6,12 @@
 #include <cmath>
 #include <fstream>
 #include <iomanip>
-#include "GAString.h"
-#include "GAFloat.h"
+#include <random>
 #include "Crossover.h"
+#include "Chromosome.h"
 #include "ChromFloat.h"
 #include "ChromChars.h"
 #include "GA.h"
-#include "Chromosome.h"
-#include <random>
+#include "GAString.h"
+#include "GAFloat.h"
 #include "stringbuilder.h"

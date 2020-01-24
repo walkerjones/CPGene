@@ -1,7 +1,7 @@
 /**
- * Chromosome to abstrakcyjna klasa bazowa dla wszystkich typów chromosomów. It defines each chromosome's
+ * Chromosome to abstrakcyjna klasa bazowa dla wszystkich typów chromosomów. 
  * Dla ka¿dego chromosomu deklaruje ona geny, dopasowanie, pozycjê w rankingu dopasowania,
- * oraz proste metody kopiowania i zwracania wartoœci chromosomów w psotaci string
+ * oraz proste metody kopiowania i zwracania wartoœci chromosomów w postaci string
  */
 #pragma once
 #include <string>

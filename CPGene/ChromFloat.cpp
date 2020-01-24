@@ -11,11 +11,6 @@ std::vector<double> ChromFloat::getGenes()
 	return genes;
 }
 
-std::string ChromFloat::toString()
-{
-	return getGenesAsString();
-}
-
 int ChromFloat::getNumGenesInCommon(Chromosome * chromosome)
 {
 	return genes.size();

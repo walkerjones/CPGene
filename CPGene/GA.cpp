@@ -1,12 +1,5 @@
 #include "PCH.h"
-
-
 std::mt19937 mt{ std::random_device{}() };
-
-void GA::run()
-{
-	evolve();
-}
 
 GA::GA(int chromosomeDim, int populationDim, double crossoverProb, int randomSelectionChance, int maxGenerations, int numPrelimRuns, int maxPrelimGenerations, double mutationProb, int crossoverType, bool computeStatistics)
 {
@@ -183,13 +176,13 @@ int GA::evolve()
 
 		iGen++;
 	}
-	std::cout << "Gen: " << (iGen) << " Avg Fitness = " << this->genAvgFitness[iGen - 1] << " Avg DEV = " << this->genAvgDeviation[iGen - 1] << std::endl;
+	std::cout << "Gen: " << (iGen) << " Avg Fitness = " << this->genAvgFitness[iGen-1] << " Avg DEV = " << this->genAvgDeviation[iGen-1] << std::endl;
 	addChromosomesToLog(iGen, 10); 
 	computeFitnessRankings();
 	std::cout << "Najlepszy chromosom: ";
 	std::cout << this->chromosomes[this->bestFitnessChromIndex]->getGenesAsStr() << " Fitness = " << std::fixed << std::setprecision(8) << this->chromosomes[this->bestFitnessChromIndex]->fitness << std::endl;
 	
-	std::cout << "CPGene stop: " << std::endl; 
+	std::cout << "CPGene stop" << std::endl; 
 	return (iGen);
 }
 

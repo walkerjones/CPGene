@@ -35,7 +35,7 @@ int main()
 		true //obliczanie statystyk
 	);
 	trig.initPopulation();
-	trig.run();
+	trig.evolve();
 	return 0;
 }
 #endif
@@ -64,7 +64,7 @@ int main()
 		Crossover::ctTwoPoint, //typ krzy¿owania
 		true); //obliczanie statystyk
 	bin.initPopulation();
-	bin.run();
+	bin.evolve();
 	return 0;
 }
 
@@ -135,7 +135,7 @@ int main()
 
 	cur.setCurveData(curveData);
 	cur.initPopulation();
-	cur.run();
+	cur.evolve();
 	return 0;
 }
 #endif
@@ -220,7 +220,7 @@ int main()
 	bag.knapValue = kvalue;
 	bag.limit = limit;
 	bag.initPopulation();
-	bag.run();
+	bag.evolve();
 	bag.printResult(txtout);
 
 	

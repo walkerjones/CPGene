@@ -82,9 +82,6 @@ public:
 	/** obliczanie statystyk ka¿dego pokolenia podczas ewolucji */
 	bool computeStatistics = false;
 
-	/** funkcja uruchamiaj¹ca wykonywanie algorytmu */
-	virtual void run();
-
 	/** Inicjalizacja GA parametrami	 */
 	GA(int chromosomeDim,
 		int populationDim,

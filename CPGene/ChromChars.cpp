@@ -6,11 +6,6 @@ ChromChars::ChromChars(int iGenesDim)
 	genes = std::vector<char>(iGenesDim);
 }
 
-std::string ChromChars::toString()
-{
-	return (getGenesAsStr());
-}
-
 int ChromChars::getNumGenesInCommon(Chromosome * chromosome)
 {
 	int numGenesInCommon = 0;

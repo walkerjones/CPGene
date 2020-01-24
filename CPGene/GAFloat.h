@@ -14,25 +14,24 @@ public:
 
 	/** zwraca chromosom rzutowany na ChromFloat * */
 	virtual ChromFloat *getChromosome(int index);
-
-	/** podmiana dwóch genów w chromosomie zgodnie z podanym indeksem */
-	void doRandomMutation(int iChromIndex) override;
-
-
+	
 	/** tworzy losowe chromosomy na podstawie dostêpnych genów z puli  */
 	void initPopulation() override;
 	
 	/** jednopunktowe krzy¿owanie chromosomów */
 	void doOnePtCrossover(Chromosome *Chrom1, Chromosome *Chrom2) override;
 
-	/** podmiana wartoœci genów w dwóch chromosomach na wskazanej pozycji */
-	virtual void swapGene(int geneIndex, ChromFloat *chrom1, ChromFloat *chrom2);
-
 	/** dwupunkotwe krzy¿owanie chromosomów */
 	void doTwoPtCrossover(Chromosome *Chrom1, Chromosome *Chrom2) override;
 
 	/** jednolite krzy¿owanie chromosomów  */
 	void doUniformCrossover(Chromosome *Chrom1, Chromosome *Chrom2) override;
+
+	/** podmiana dwóch genów w chromosomie zgodnie z podanym indeksem */
+	void doRandomMutation(int iChromIndex) override;
+
+	/** podmiana wartoœci genów w dwóch chromosomach na wskazanej pozycji */
+	virtual void swapGene(int geneIndex, ChromFloat* chrom1, ChromFloat* chrom2);
 
 	/** Inicjalizacja obiektu z parametrami */
 

@@ -1,10 +1,30 @@
 #include "PCH.h"
 
 
-
-
-GAFloat::GAFloat(int chromosomeDim, int populationDim, double crossoverProb, int randomSelectionChance, int maxGenerations, int numPrelimRuns, int maxPrelimGenerations, double mutationProb, int crossoverType, int decPtsPrecision, bool positiveNumOnly, bool computeStatistics) :
-	GA(chromosomeDim, populationDim, crossoverProb, randomSelectionChance, maxGenerations, numPrelimRuns, maxPrelimGenerations, mutationProb, crossoverType, computeStatistics)
+GAFloat::GAFloat(
+	int chromosomeDim,
+	int populationDim,
+	double crossoverProb, 
+	int randomSelectionChance,
+	int maxGenerations,
+	int numPrelimRuns, 
+	int maxPrelimGenerations,
+	double mutationProb, 
+	int crossoverType, 
+	int decPtsPrecision, 
+	bool positiveNumOnly,
+	bool computeStatistics) 
+	:
+	GA(chromosomeDim,
+		populationDim, 
+		crossoverProb, 
+		randomSelectionChance, 
+		maxGenerations, 
+		numPrelimRuns, 
+		maxPrelimGenerations, 
+		mutationProb, 
+		crossoverType, 
+		computeStatistics)
 {
 
 	if (decPtsPrecision < 0)

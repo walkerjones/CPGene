@@ -19,9 +19,6 @@ public:
 	/** Zwraca wektor genów */
 	std::vector<double> getGenes();
 
-	/** Zwraca geny w postaci string */
-	std::string toString();
-
 	/** Oblicza liczbê wspólnych genów dla danego chromosomu i przekazanego argumentem */
 	int getNumGenesInCommon(Chromosome *chromosome);
 

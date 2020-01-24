@@ -17,9 +17,6 @@ public:
 	/** Konstruktor tworz¹cy nowy wektor genów o rozmiarze iGenesDim */
 	ChromChars(int iGenesDim);
 
-	/** Zwraca geny chromosomu w postaci string	*/
-	std::string toString();
-
 	/** Oblicza ile genów jest wspólnych dla danego chromosomu wzglêdem przekazanego w argumencie */
 	int getNumGenesInCommon(Chromosome *chromosome);
 

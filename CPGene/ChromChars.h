@@ -17,14 +17,14 @@ public:
 	/** Konstruktor tworz¹cy nowy wektor genów o rozmiarze iGenesDim */
 	ChromChars(int iGenesDim);
 
-	/** Oblicza ile genów jest wspólnych dla danego chromosomu wzglêdem przekazanego w argumencie */
-	int getNumGenesInCommon(Chromosome *chromosome);
-
 	/** Zwraca wektor zawieraj¹cy geny 	 */
 	std::vector<char> getGenes();
 
 	/** Zwraca geny w postaci string	 */
 	std::string getGenesAsStr();
+
+	/** Nadpisuje geny obecnego chromosomu poprzez kopiowania ich ze wzkazanego */
+	void copyChromGenes(Chromosome* chromosome);
 
 	/** Zwraca pojedynczy gen ze wzkazanej pozycji */
 	char getGene(int iGene);
@@ -32,8 +32,9 @@ public:
 	/** Ustawia pulê genów na podstawie przekazanych danych w postaci string */
 	void setGenesFromStr(const std::string &sChromosome);
 
-	/** Nadpisuje geny obecnego chromosomu poprzez kopiowania ich ze wzkazanego */
-	void copyChromGenes(Chromosome *chromosome);
+	/** Oblicza ile genów jest wspólnych dla danego chromosomu wzglêdem przekazanego w argumencie */
+	int getNumGenesInCommon(Chromosome* chromosome);
+
 	~ChromChars();
 };
 

@@ -19,8 +19,8 @@ public:
 	/** Zwraca wektor genów */
 	std::vector<double> getGenes();
 
-	/** Oblicza liczbê wspólnych genów dla danego chromosomu i przekazanego argumentem */
-	int getNumGenesInCommon(Chromosome *chromosome);
+	/** Zwraca chromosom w postaci string */
+	std::string getGenesAsStr();
 
 	/** Zwraca sformatowany ³añcuch typu string zawieraj¹cy geny */
 	std::string getGenesAsString();
@@ -34,8 +34,8 @@ public:
 	/** Ustawia wkazany gen na podan¹ wartoœæ */
 	void setGene(int iGene, double value);
 
-	/** Zwraca chromosom w postaci string */
-	std::string getGenesAsStr();
+	/** Oblicza liczbê wspólnych genów dla danego chromosomu i przekazanego argumentem */
+	int getNumGenesInCommon(Chromosome* chromosome);
 
 	~ChromFloat();
 };

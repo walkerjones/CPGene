@@ -19,27 +19,6 @@ public:
 	/** rodzaj krzy¿owania */
 	int crossoverType = 0;
 
-	/** inicjalizacja chromosomów w sposób losowy */
-	virtual void initPopulation() = 0;
-
-	/** wykonanie losowej mutacji na wskazanym chromosomie */
-	virtual void doRandomMutation(int iChromIndex) = 0;
-
-	/** krzy¿owanie jednopunktowe na obydwu wskazanych chromosomach */
-	virtual void doOnePtCrossover(Chromosome *Chrom1, Chromosome *Chrom2) = 0;
-
-	/** kry¿owanie dwupunktowe na obydwu wskazanych chromosomach */
-	virtual void doTwoPtCrossover(Chromosome *Chrom1, Chromosome *Chrom2) = 0;
-
-	/** krzy¿owanie jednolite  */
-	virtual void doUniformCrossover(Chromosome *Chrom1, Chromosome *Chrom2) = 0;
-
-	/** zwraca wartoœæ dopasowania dla danego chromosomu */
-	virtual double getFitness(int iChromIndex) =0;
-
-	/** Œrednie odchylenie liczone na podstawie wartoœci dopasowania wszystkich chromosomów w populacji */
-	virtual double getAvgDeviationAmongChroms();
-
 	/** prawdopodobieñstwo wyst¹pienia mutacji podczas parowania chromosomów  */
 	double mutationProb;
 
@@ -50,13 +29,19 @@ public:
 	int numPrelimRuns;
 
 	/** max pokoleñ we wstêpnych uruchomieniach, pozwala na stworzenie lepszej puli chromosomów startowych */
-	int maxPrelimGenerations; 
+	int maxPrelimGenerations;
 
 	/** procentowa szansa mutacji losowej wystêpuj¹cej niezale¿nie od rankingu dopasowania chromosomów */
 	int randomSelectionChance;
 
 	/** prawdopodobieñstwo krzy¿owania podczas parowania */
 	double crossoverProb;
+
+	/** indeks najlepiej dopasowanego (fit) chromosomu populacji */
+	int bestFitnessChromIndex = 0;
+
+	/** indeks najgorzej dopasowanego (fit) chromosomu populacji */
+	int worstFitnessChromIndex = 0;
 
 	/** wektor chromosomów aktualnego pokolenia */
 	std::vector<Chromosome*> chromosomes;
@@ -66,13 +51,7 @@ public:
 
 	/** wektor puli chromosomów wstêpnych */
 	std::vector<Chromosome*> prelimChrom;
-
-	/** indeks najlepiej dopasowanego (fit) chromosomu populacji */
-	int bestFitnessChromIndex = 0;
-
-	/** indeks najgorzej dopasowanego (fit) chromosomu populacji */
-	int worstFitnessChromIndex = 0;
-
+	
 	/** œrednie odchylenie pokolenia */
 	std::vector<double> genAvgDeviation;
 
@@ -81,6 +60,7 @@ public:
 
 	/** obliczanie statystyk ka¿dego pokolenia podczas ewolucji */
 	bool computeStatistics = false;
+
 
 	/** Inicjalizacja GA parametrami	 */
 	GA(int chromosomeDim,
@@ -93,6 +73,27 @@ public:
 		double mutationProb,
 		int crossoverType,
 		bool computeStatistics);
+
+	/** inicjalizacja chromosomów w sposób losowy */
+	virtual void initPopulation() = 0;
+
+	/** wykonanie losowej mutacji na wskazanym chromosomie */
+	virtual void doRandomMutation(int iChromIndex) = 0;
+
+	/** krzy¿owanie jednopunktowe na obydwu wskazanych chromosomach */
+	virtual void doOnePtCrossover(Chromosome* Chrom1, Chromosome* Chrom2) = 0;
+
+	/** kry¿owanie dwupunktowe na obydwu wskazanych chromosomach */
+	virtual void doTwoPtCrossover(Chromosome* Chrom1, Chromosome* Chrom2) = 0;
+
+	/** krzy¿owanie jednolite  */
+	virtual void doUniformCrossover(Chromosome* Chrom1, Chromosome* Chrom2) = 0;
+
+	/** zwraca wartoœæ dopasowania dla danego chromosomu */
+	virtual double getFitness(int iChromIndex) = 0;
+
+	/** Œrednie odchylenie liczone na podstawie wartoœci dopasowania wszystkich chromosomów w populacji */
+	virtual double getAvgDeviationAmongChroms();
 	
 	/** zwraca œrednie odchylenie populacji dla wybranego pokolenia */
 	virtual double getAvgDeviation(int iGeneration);

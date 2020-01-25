@@ -57,7 +57,7 @@ public:
 	void doUniformCrossover(Chromosome *Chrom1, Chromosome *Chrom2);
 
 	~GAString();
-	double getFitness(int iChromIndex);
+	virtual double getFitness(int iChromIndex);
 
 #ifdef Knapsack
 	double weight, value, limit;

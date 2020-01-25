@@ -50,7 +50,7 @@ public:
 
 
 	~GAFloat();
-	double getFitness(int iChromIndex);
+	virtual double getFitness(int iChromIndex);
 
 #ifdef CurveFit
 	public:	

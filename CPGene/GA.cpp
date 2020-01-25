@@ -434,7 +434,7 @@ long long GA::binaryStrToInt(const std::string & sBinary)
 	int iLen = sBinary.length();
 	for (int i = iLen - 1; i >= 0; i--)
 	{
-		if (sBinary[i] == L'1')
+		if (sBinary[i] == '1')
 		{
 			digit = 1;
 		}

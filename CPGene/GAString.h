@@ -1,9 +1,4 @@
 #pragma once
-#include "GA.h"
-#include "GA.h"
-#include <string>
-#include "stringbuilder.h"
-#include "ChromChars.h"
 
 class GAString :
 	public GA

@@ -2,9 +2,6 @@
  * Klasa rozszerzaj¹ca chromosome dla typu chromosomów zapisanych w postaci liczb zmiennoprzecinkowych
  */
 #pragma once
-#include "Chromosome.h"
-#include <vector>
-#include <string>
 
 class ChromFloat :
 	public Chromosome

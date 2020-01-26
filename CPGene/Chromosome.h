@@ -4,7 +4,7 @@
  * oraz proste metody kopiowania i zwracania wartoœci chromosomów w postaci string
  */
 #pragma once
-#include <string>
+
 class Chromosome
 {
 public:

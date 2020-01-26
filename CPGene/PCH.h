@@ -7,6 +7,7 @@
 #include <fstream>
 #include <iomanip>
 #include <random>
+#include <sstream>
 #include "Crossover.h"
 #include "Chromosome.h"
 #include "ChromFloat.h"

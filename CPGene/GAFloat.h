@@ -1,6 +1,5 @@
 #pragma once
-#include "GA.h"
-#include "ChromFloat.h"
+
 class GAFloat :
 	public GA
 {

@@ -4,8 +4,6 @@
 	 swoich typów obs³ugiwanych chromosomów GAFloat, GAString. 
 	 Zawiera metody wspólne dla wszystkich klas pochodnych.
 	 ---------------------------------------------------------------------------------------------*/
-#include <vector>
-#include "Chromosome.h"
 #pragma once
 class GA
 {

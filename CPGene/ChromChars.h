@@ -3,9 +3,6 @@
 */
 
 #pragma once
-#include "Chromosome.h"
-#include <vector>
-#include <string>
 
 class ChromChars :
 	public Chromosome

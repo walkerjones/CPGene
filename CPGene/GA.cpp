@@ -166,7 +166,7 @@ int GA::evolve()
 		computeFitnessRankings();
 		doGeneticMating();
 		copyNextGenToThisGen();
-		std::cout << "Gen: " << iGen << std::endl;
+		//std::cout << "Gen: " << iGen << std::endl;
 
 		if (computeStatistics == true)
 		{
@@ -264,6 +264,7 @@ int GA::getFitnessRank(double fitness)
 		}
 	}
 
+	return (fitnessRank);
 	return (fitnessRank);
 }
 

@@ -20,15 +20,15 @@ double GAString::getFitness(int iChromIndex)
 int main()
 {
 	GAString trig(
-		7, //liczba genów w chromosomie
-		50, //rozmiar N populacji chromosomów
+		15, //liczba genów w chromosomie
+		250, //rozmiar N populacji chromosomów
 		0.7, //prawdopodobieñstwo krzy¿owania
-		10, //szansa na losow¹ selekcjê w % (niezale¿nie od funkcji fit)
-		150, //limit liczby pokoleñ
-		5, //liczba wstêpnych uruchomieñ
-		20, //max pokoleñ we wstêpnych uruchomieniach
-		0.003, //szansa mutacji chromosomu
-		6, //liczba miejsc po przecinku w chromosomie
+		10, //szansa na losow¹ selekcjê 
+		550, //limit liczby pokoleñ
+		0, //liczba wstêpnych uruchomieñ
+		5, //max pokoleñ we wstêpnych uruchomieniach
+		0.1, //szansa mutacji chromosomu
+		15, //liczba miejsc po przecinku w chromosomie
 		//jeœli chromosom ma 7 genów i 6 miejsc po przecinku to liczby maj¹ postaæ "0.123456"
 		"0123456789", //pula mo¿liwych genów
 		Crossover::ctTwoPoint, //typ krzy¿owania
@@ -81,8 +81,7 @@ double GAFloat::getFitness(int iChromIndex)
 	{
 		rValue = 0;
 
-		//calculate the value of the function plugging in the genes
-		//in place of coefficients (C1..C6)
+
 		for (int iGene = 0; iGene < chromosomeDim; iGene++)
 		{
 			rPower = std::pow(static_cast<double>(iCurvePt), static_cast<double>(chromosomeDim) - 1 - iGene);
@@ -95,11 +94,11 @@ double GAFloat::getFitness(int iChromIndex)
 
 	if (std::abs(rError) > 1e-12)
 	{
-		return (1 / rError); //this minimizes error (find smallest error)
+		return (1 / rError); 
 	}
 	else
 	{
-		return (1 / 1e-12); //prevents divide by zero error
+		return (1 / 1e-12); 
 	}
 };
 void GAFloat::setCurveData(std::vector<double> &CurveData)
@@ -116,20 +115,19 @@ void GAFloat::setCurveData(std::vector<double> &CurveData)
 
 int main()
 {
-	std::vector<double> curveData = { 1.01, 0, 1, 3.98, 9.01, 16.01, 25, 35.99 };
+	std::vector<double> curveData = { 4, 0, 1, 4, 9, 16, 25, 36 };
 
 	GAFloat cur(
 		3, // liczba genów chromosomu
 		100, //rozmiar populacji N chromosomów
 		0.7, //prawdopodobieñstwo krzy¿owania
 		6, //szansa na losow¹ selekcjê w % (niezale¿nie od funkcji fit)
-		3000, //limit liczby pokoleñ
-		10, //liczba wstêpnych uruchomieñ (to build good breeding stock for final--full run)
-		20, //max pokoleñ we wstêpnych uruchomieniach
-		0.1, //szansa mutacji chromosomu
+		10000, //limit liczby pokoleñ
+		50, //liczba wstêpnych uruchomieñ
+		10, //max pokoleñ we wstêpnych uruchomieniach
+		0.02, //szansa mutacji chromosomu
 		Crossover::ctTwoPoint, //typ krzy¿owania
-		2, //liczba miejsc po przecinku precyzji
-		//jeœli chromosom ma 3 geny i 2 miejsca po przecinku, wynik ma postaæ "0.12"
+		0, //liczba miejsc po przecinku precyzji
 		false, //wy³¹cznie liczby nieujemne
 		true); //obliczanie statystyk
 
@@ -204,10 +202,10 @@ int main()
 
 	GAString bag(
 		n, //liczba genów chromosomu w Char
-		100, //rozmiar populacji N chromosomów
+		1000, //rozmiar populacji N chromosomów
 		0.7, //prawdopodobieñstwo krzy¿owania
 		5, //szansa na losow¹ selekcjê w % (niezale¿nie od funkcji fit)
-		50, //limit liczby pokoleñ
+		50000, //limit liczby pokoleñ
 		0, //liczba wstêpnych uruchomieñ
 		10, //max pokoleñ we wstêpnych uruchomieniach
 		0.01, //szansa mutacji chromosomu

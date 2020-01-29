@@ -1,5 +1,5 @@
 //----------------------------------------------------------------------------------------
-//	Copyright © 2007 - 2019 Tangible Software Solutions, Inc.
+//	Copyright © 2007 - 2018 Tangible Software Solutions, Inc.
 //	This class can be used by anyone provided that the copyright notice remains intact.
 //----------------------------------------------------------------------------------------
 #pragma once

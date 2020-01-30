@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
+    <Text Include="knapsack data large.txt" />
     <Text Include="output.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

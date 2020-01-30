@@ -5,7 +5,7 @@
 //#define BinaryOnes 1 
 //#define CurveFit 1
 #define Knapsack 1
-
+#define KnapBig 1
 #include "PCH.h"
 
 #ifdef TrigFun
@@ -180,6 +180,8 @@ void GAString::printResult(std::ofstream &txtout)
 
 int main()
 {
+
+#ifndef KnapBig
 	std::ifstream txtin("input.txt");
 	if (txtin.fail()) {
 		std::cout << "Brak pliku input.txt" << std::endl;
@@ -199,19 +201,50 @@ int main()
 		kvalue.push_back(b);
 		n++;
 	}
+#endif
+#ifdef KnapBig
+	std::ifstream txtin("knapsack data large.txt");
+	if (txtin.fail()) {
+		std::cout << "Brak pliku txt" << std::endl;
+		return 0;
+	}
+	std::ofstream txtout("output.txt");
+	std::string line;
+	std::vector<double> kweight, kvalue;
+	double limit = 0.0;
+	int n = 0;
+	while (std::getline(txtin, line))
+	{
+		std::istringstream iss(line);
+		double a, b;
+		int x;
+		if (n == 0)
+		{
+			if (!(iss >> limit)) { break; }
+		}
+		else
+		{
+			if (!(iss >> x >> a >> b)) { break; }
+			kweight.push_back(a);
+			kvalue.push_back(b);			
+		}
+		n++;
+	}
+	n--;
+#endif
 
 	GAString bag(
 		n, //liczba genów chromosomu w Char
-		1000, //rozmiar populacji N chromosomów
+		500, //rozmiar populacji N chromosomów
 		0.7, //prawdopodobieñstwo krzy¿owania
 		5, //szansa na losow¹ selekcjê w % (niezale¿nie od funkcji fit)
-		50000, //limit liczby pokoleñ
-		0, //liczba wstêpnych uruchomieñ
+		1000, //limit liczby pokoleñ
+		5, //liczba wstêpnych uruchomieñ
 		10, //max pokoleñ we wstêpnych uruchomieniach
-		0.01, //szansa mutacji chromosomu
+		0.1, //szansa mutacji chromosomu
 		0, //liczba miejsc po przecinku w chromosomie (0 oznacza liczby ca³kowite)
 		"01", //pula mo¿liwych genów
-		Crossover::ctTwoPoint, //typ krzy¿owania
+		Crossover::ctUniform, //typ krzy¿owania
 		true); //obliczanie statystyk
 
 	bag.knapWeight = kweight;
@@ -219,9 +252,7 @@ int main()
 	bag.limit = limit;
 	bag.initPopulation();
 	bag.evolve();
-	bag.printResult(txtout);
-
-	
+	bag.printResult(txtout);	
 	return 0;
 }
 #endif

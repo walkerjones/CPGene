@@ -70,5 +70,8 @@
     <Text Include="output.txt">
       <Filter>Pliki źródłowe</Filter>
     </Text>
+    <Text Include="knapsack data large.txt">
+      <Filter>Pliki źródłowe</Filter>
+    </Text>
   </ItemGroup>
 </Project>
